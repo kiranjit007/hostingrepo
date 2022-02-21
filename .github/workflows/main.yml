@@ -23,6 +23,7 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
+          aws_s3_bucket: ${{ secrets.aws_s3_bucket_name }}
           aws_access_key_id: ${{ secrets.aws_access_key_id }}
           aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
           aws_region: "<ap-south-1>" 

@@ -29,3 +29,5 @@ jobs:
           aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
           aws_region: "<ap-south-1>" 
           source_dir: "build"
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync . s3://demoicodex --delet

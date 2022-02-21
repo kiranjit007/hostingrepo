@@ -11,14 +11,11 @@ on:
   
   workflow_dispatch:
 
-# A workflow run is made up of one or more jo
 jobs:
-  # This workflow contains a single job called "build"
+ 
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -31,8 +28,8 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "<ap-south-1>" 
-          SOURCE_DIR: "build"
+          aws_s3_bucket: ${{ secrets. aws_s3_bucke_name }}
+          aws_access_key_id: ${{ secrets.aws_access_key_id }}
+          aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
+          aws_region: "<ap-south-1>" 
+          source_dir: "build"
